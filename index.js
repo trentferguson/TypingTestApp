@@ -10,7 +10,7 @@ let mistakes = 0;
 
 //Display random quotes
 const renderNewQuote = async () => {
-    //Fetch content from quote api url
+    //Fetch data from random quote API
     const response = await fetch(quoteApiUrl);
     let data = await response.json();
     quote = data.content;
@@ -113,4 +113,5 @@ window.onload = () => {
     document.getElementById("start-test").style.display = "block";
     document.getElementById("stop-test").style.display = "none";
     userInput.disabled = true;
+    renderNewQuote();
 }
